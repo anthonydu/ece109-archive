@@ -11,37 +11,37 @@ GO          AND R6, R6, #0 ; clear the negative checker
             PUTS
 
 GET11       GETC
-			      OUT
+			OUT
             LD R1, NEG113
             ADD R1, R0, R1 ; check if input is "q"
             BRz BRTHANKS
             LD R1, NEG57
-			      ADD R1, R0, R1 ; check if the input is <= 9
-			      BRp GET11
-			      LD R1, NEG48
-			      ADD R0, R0, R1 ; check if the input is >= 0, set R0 to the actual number
+			ADD R1, R0, R1 ; check if the input is <= 9
+			BRp GET11
+			LD R1, NEG48
+			ADD R0, R0, R1 ; check if the input is >= 0, set R0 to the actual number
             BRn GET11
             ST R0, NUM11
 
 GET12       GETC
             ADD R1, R0, #-10 ; check if the input is a [LINE FEED]
-			      BRz SKIPX101
-			      OUT
+			BRz SKIPX101
+			OUT
             LD R1, NEG113
             ADD R1, R0, R1 ; check if input is "q"
             BRz BRTHANKS
             LD R1, NEG57
-			      ADD R1, R0, R1 ; check if the input is <= 9
-			      BRp GET12
-			      LD R1, NEG48
-			      ADD R0, R0, R1 ; check if the input is >= 0, set R0 to the actual number
+			ADD R1, R0, R1 ; check if the input is <= 9
+			BRp GET12
+			LD R1, NEG48
+			ADD R0, R0, R1 ; check if the input is >= 0, set R0 to the actual number
             BRn GET12
             ST R0, NUM12
 
 TIMES101    LD R0, NUM11
             AND R1, R1, #0   ; Clear R1
-    	    	ADD R1, R1, R0   ; 1 x R0
-    		    ADD R1, R1, R0   ; 2 x R0
+    		ADD R1, R1, R0   ; 1 x R0
+    		ADD R1, R1, R0   ; 2 x R0
             ADD R1, R1, R0   ; 3 x R0
             ADD R1, R1, R0   ; 4 x R0
             ADD R1, R1, R0   ; 5 x R0
@@ -55,16 +55,16 @@ TIMES101    LD R0, NUM11
             BRnzp SKIPX101
 
 ESN         .STRINGZ "Enter Start Number (0-49): "
-EEN     	  .STRINGZ "Enter End Number (0-49): "
-DIFFMSG		  .STRINGZ "The difference of the two numbers is: "
-THXMSG		  .STRINGZ "Thank you for playing!"
-ERRORMSG	  .STRINGZ "Error: A value is out of range!"
+EEN     	.STRINGZ "Enter End Number (0-49): "
+DIFFMSG		.STRINGZ "The difference of the two numbers is: "
+THXMSG		.STRINGZ "Thank you for playing!"
+ERRORMSG	.STRINGZ "Error: A value is out of range!"
 NL          .STRINGZ "\n"
 
-POS48		    .FILL #48
-NEG48		    .FILL #-48
-NEG49		    .FILL #-49
-NEG57		    .FILL #-57
+POS48		.FILL #48
+NEG48		.FILL #-48
+NEG49		.FILL #-49
+NEG57		.FILL #-57
 NEG113      .FILL #-113
 HYPHEN      .FILL #45
 
@@ -82,37 +82,37 @@ SKIPX101    LEA R0, NL
             PUTS
 
 GET21       GETC
-			      OUT
+			OUT
             LD R1, NEG113
             ADD R1, R0, R1 ; check if input is "q"
             BRz THANKS
             LD R1, NEG57
-			      ADD R1, R0, R1 ; check if the input is <= 9
-			      BRp GET21
-	        	LD R1, NEG48
-		      	ADD R0, R0, R1 ; check if the input is >= 0, set R0 to the actual number
+			ADD R1, R0, R1 ; check if the input is <= 9
+			BRp GET21
+			LD R1, NEG48
+			ADD R0, R0, R1 ; check if the input is >= 0, set R0 to the actual number
             BRn GET21
             ST R0, NUM21
 
 GET22       GETC
             ADD R1, R0, #-10 ; check if the input is a [LINE FEED]
-		      	BRz SUBTRACT
-		      	OUT
+			BRz SUBTRACT
+			OUT
             LD R1, NEG113
             ADD R1, R0, R1 ; check if input is "q"
             BRz THANKS
             LD R1, NEG57
-			      ADD R1, R0, R1 ; check if the input is <= 9
-		      	BRp GET22
-		      	LD R1, NEG48
-		      	ADD R0, R0, R1 ; check if the input is >= 0, set R0 to the actual number
+			ADD R1, R0, R1 ; check if the input is <= 9
+			BRp GET22
+			LD R1, NEG48
+			ADD R0, R0, R1 ; check if the input is >= 0, set R0 to the actual number
             BRn GET22
             ST R0, NUM22
 
 TIMES102    LD R0, NUM21
             AND R1, R1, #0   ; Clear R1
-    	    	ADD R1, R1, R0   ; 1 x R0
-    	    	ADD R1, R1, R0   ; 2 x R0
+    		ADD R1, R1, R0   ; 1 x R0
+    		ADD R1, R1, R0   ; 2 x R0
             ADD R1, R1, R0   ; 3 x R0
             ADD R1, R1, R0   ; 4 x R0
             ADD R1, R1, R0   ; 5 x R0
@@ -136,8 +136,8 @@ SUBTRACT    LD R1, NUM11
             ADD R4, R3, R4
             BRp ERROR
             NOT R3, R3
-			      ADD R3, R3, #1 ; convert second number to negative
-			      ADD R0, R0, R3 ; difference stored in R0
+			ADD R3, R3, #1 ; convert second number to negative
+			ADD R0, R0, R3 ; difference stored in R0
 
 NEGATIVE    BRzp SKIPFLIP
             ADD R6, R6, #1 ; set R6 to 1 if number is negative
@@ -160,7 +160,7 @@ DIV10       ADD R1, R1, #1
             ADD R6, R6, #0 ; check if the difference is negative
             BRnz SKIPNEG
             LD R0, HYPHEN
-			      OUT
+			OUT
 SKIPNEG     ADD R1, R1, #0 ; check if the tens digit is 0
             BRz SKIP0
             ADD R0, R1, R3
@@ -172,13 +172,13 @@ SKIP0       ADD R0, R2, R3
             PUTS
             BRnzp BRGO
 
-ERROR		    LEA R0, NL
-			      PUTS
-			      LEA R0, ERRORMSG
-			      PUTS
+ERROR		LEA R0, NL
+			PUTS
+			LEA R0, ERRORMSG
+			PUTS
             LEA R0, NL
             PUTS
-			      BRnzp BRGO
+			BRnzp BRGO
 
 THANKS      LEA R0, NL
             PUTS
