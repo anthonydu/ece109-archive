@@ -2,7 +2,7 @@
 
 This LC-3 assembly language program will subtract two values entered by the user.
 
-## Program Specification
+## Details
 
 The program must start at address x3000. Here’s how the program must behave:
 
