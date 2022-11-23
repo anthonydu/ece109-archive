@@ -73,9 +73,11 @@ string “Thank you for playing!” and then Halt.
 
 Entering ‘q’ is the only way to end the game. Even if all of the blocks have been painted white/red, the game keeps going. We do not detect this case, and we do not detect a “win” when all hidden objects have been found. This is to simplify the program – you can implement added features on your own time!
 
-Example console output, assuming the evenrows.obj bitmap has been loaded: Enter X (0-15): 12
+Example console output, assuming the evenrows.obj bitmap has been loaded: 
 
 ```
+Enter X (0-15): 12
+
 Enter Y (0-14): 11
 
 HIT
