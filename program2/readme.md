@@ -41,7 +41,21 @@ There are five commands for changing the Pen color:
 
 There are two additional commands:
 
-| Command Character | Action                                                                                            |
-|-------------------|---------------------------------------------------------------------------------------------------|
+| Command Character | Action                                                                                           |
+|-------------------|--------------------------------------------------------------------------------------------------|
 | return            | _Clear the screen._<br>Paint all pixels black, except the Pen location, which retains its color. |
 | q                 | _Quit._<br>The simulated machine must stop running.                                              |
+
+## Details
+
+The PennSim graphics display is bit-mapped, meaning that each pixel has a corresponding memory location. The content of that memory location controls the color of the pixel.
+
+### Pixel Addresses
+
+Addresses xC000 through xFDFF are assigned to the graphics display. The low address corresponds to the top left corner (0, 0). Moving one pixel to the right adds one to the address, and it “wraps around” to the next row when it gets to the right edge. Since the display is 128 pixels wide, this means that moving down one pixel is equivalent to adding 128 to the address.
+
+The address of point (x, y) can be calculated as: xC000 + x + 128y.
+
+For this assignment, you will not need to calculate arbitrary pixel addresses, except to figure out where the initial location (64, 62) is. You will be moving left (-1), right (+1), up (-128) or down (+128) from the current address.
+
+You will, however, need to recognize when the Pen is at an edge of the display, so that you don’t go beyond the edge.
