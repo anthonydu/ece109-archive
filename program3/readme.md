@@ -33,9 +33,9 @@ Example:
 
 We are providing several object (.obj) files, which you can download from the Programming Assignments page on the Moodle site.
 
-The required file is p3os.obj The OS file is the same one from Program 2.
+The required file is **p3os.obj** The OS file is the same one from Program 2.
 
-Two other files are sample bitmaps for use in debugging your code. The evenrows.obj file includes a bitmap where every block on even rows (0, 2, 4, ...) is set to 1. The oddcols.obj file is a bit map where every block in odd columns (1, 3, 5, ...) is set to 1. The file random.obj will be the final test for your code.
+Two other files are sample bitmaps for use in debugging your code. The **evenrows.obj** file includes a bitmap where every block on even rows (0, 2, 4, ...) is set to 1. The **oddcols.obj** file is a bit map where every block in odd columns (1, 3, 5, ...) is set to 1. The file **random.obj** will be the final test for your code.
 
 ## Implementation
 
@@ -73,7 +73,7 @@ string “Thank you for playing!” and then Halt.
 
 Entering ‘q’ is the only way to end the game. Even if all of the blocks have been painted white/red, the game keeps going. We do not detect this case, and we do not detect a “win” when all hidden objects have been found. This is to simplify the program – you can implement added features on your own time!
 
-Example console output, assuming the evenrows.obj bitmap has been loaded: 
+Example console output, assuming the **evenrows.obj** bitmap has been loaded: 
 
 ```
 Enter X (0-15): 12
