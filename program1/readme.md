@@ -20,60 +20,73 @@ serves as a prompt to tell the user that the program is waiting for input. The p
 6. The program will subtract the first number minus the second number, of the values that have been entered on the keyboard. The program then converts this binary difference to a two-digit decimal number and converts the digits to ASCII code. A negative sign must be shown for a negative result.
 
 7. The program sends a newline to the console and then prints the following on the console:
-The difference of the two numbers is: zz
-where zz is the two-digit sum. A linefeed (newline) is printed at the end of the string. (Your code will not print in boldface, of course; that’s just used for emphasis here.) Leading zeroes shall NOT be printed in the value.
+
+   `The difference of the two numbers is: zz`
+
+   where zz is the two-digit sum. A linefeed (newline) is printed at the end of the string. (Your code will not print in boldface, of course; that’s just used for emphasis here.) Leading zeroes shall NOT be printed in the value.
 
 8. The program returns to step 1.
 
-Do not use subroutines (the JSR instruction) for this assignment.
+Subroutines (the JSR instruction) are not allowed for this assignment.
 
 ## Example Runs
 
-_Example run (user input is shown in bold):_
+_Example run:_
 
+```
 Enter First Number (0-49): 30
 
 Enter Second Number (0-49): 10
 
 The difference of the two numbers is: 20
+```
 
 _Another example run:_
 
+```
 Enter First Number (0-49): 15
 
 Enter Second Number (0-49): 30
 
 The difference of the two numbers is: -15
+```
 
 _Another example run:_
 
+```
 Enter First Number (0-49): 15 
 
 Enter Second Number (0-49): q 
 
 Thank you for playing!
+```
 
 _Another example run:_
 
+```
 Enter First Number (0-49): 4xd5
 
 Enter Second Number (0-49): wr3dq0
 
 The difference of the two numbers is: 15
+```
 
 _Another example run:_
 
+```
 Enter First Number (0-49): 4
 
 Enter Second Number (0-49): 4
 
 The difference of the two numbers is: 0
+```
 
 _Another example run:_
 
+```
 Enter First Number (0-49): 75 
 
 Enter Second Number (0-49): 30 
 
 Error: A value is out of range!
-   
+```
